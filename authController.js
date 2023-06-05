@@ -1,3 +1,5 @@
+import User from './models/User.js';
+import Role from './models/Role.js';
 class AuthController {
 	async registration(req, res) {
 		try {
