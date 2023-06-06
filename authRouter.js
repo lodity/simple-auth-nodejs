@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
 import authController from './authController.js';
+import roleMiddleware from './middleware/roleMiddleware.js';
 const router = new Router();
 
 router.post(
@@ -15,6 +16,6 @@ router.post(
 	authController.registration
 );
 router.get('/login', authController.login);
-router.get('/users', authController.getUsers);
+router.get('/users', roleMiddleware(['ADMIN']), authController.getUsers);
 
 export default router;
