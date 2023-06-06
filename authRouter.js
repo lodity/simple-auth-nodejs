@@ -14,7 +14,7 @@ router.post(
 	],
 	authController.registration
 );
-router.post('/login', authController.login);
-router.get('/users', authController.users);
+router.get('/login', authController.login);
+router.get('/users', authController.getUsers);
 
 export default router;
